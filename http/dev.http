@@ -1,0 +1,33 @@
+@baseUrl = https://todos.showcode.dk/api
+
+@jwt_token = eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJKb24gQmVydGVsc2VuIiwic3ViIjoiRmVyZGluYW5kMTIzNCIsImV4cCI6MTczMzM5MDEzOCwicm9sZXMiOiJ1c2VyIiwidXNlcm5hbWUiOiJGZXJkaW5hbmQxMjM0In0.sYxFDzkFB_Tf20AcWReor68kdFQrfw90r7bTb_-Pj-Q
+
+###
+
+GET {{baseUrl}}/todos
+
+###
+
+POST {{baseUrl}}/auth/register/
+
+{
+    "username": "Ferdinand1234",
+    "password": "test12"
+}
+
+###
+
+POST {{baseUrl}}/auth/login/
+
+{
+    "username": "Ferdinand1234",
+    "password": "test12"
+}
+
+###
+
+GET {{baseUrl}}/todos/mine
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+###
